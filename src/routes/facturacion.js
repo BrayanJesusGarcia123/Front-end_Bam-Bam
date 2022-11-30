@@ -1,11 +1,13 @@
 const express = require('express');
-const { route } = require('./dashboard');
+const facturacion = require('../controller/facturacion/index')
 
 const router = express.Router();
 
-router.get('/insertar')
-router.get('/actualizar')
-router.get('/consultar')
-router.get('/eliminar')
+router.get('/insertar', facturacion.insertar)
+router.get('/insertarCompra', facturacion.insertarCompra)
+//router.get('/actualizar', facturacion.actualizar)
+router.get('/consultar', facturacion.consultar)
+router.get('/consultarCompra', facturacion.consultar)
+//router.get('/eliminar', facturacion.eliminar)
 
 module.exports = router;   
